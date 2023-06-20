@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Recipe } from '../recipe.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -7,6 +8,7 @@ import { Recipe } from '../recipe.interface';
   styleUrls: ['./form.component.css'],
 })
 export class FormComponent {
+  constructor(private readonly router: Router) {}
   recipes: Recipe[] = [
     {
       name: '',
@@ -21,5 +23,6 @@ export class FormComponent {
   };
   addRecipe() {
     this.recipes.push(this.recipe);
+    this.router.navigate(['/']);
   }
 }

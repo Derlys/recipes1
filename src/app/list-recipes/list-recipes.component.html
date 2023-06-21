@@ -1,2 +1,11 @@
-<p>list-recipes works!</p>
+<div>
+  <ul *ngFor="let recipe of recipes">
+    <li>{{ recipe.name }}</li>
+    <li>{{ recipe.ingredients }}</li>
+    <li>{{ recipe.instructions }}</li>
+  </ul>
+</div>
 <a routerLink="/create">Create recipe</a>
+<pre>
+  {{ recipes | json }}
+</pre>
